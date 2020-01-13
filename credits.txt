@@ -1,0 +1,18 @@
+Credits:
+
+AUDIO 
+--------
+Wind sounds - https://www.youtube.com/watch?v=2X1RaMVT1FU
+	Provided to YouTube by The-Source
+	Wind Sounds (Loopable) · The Kokorebee Sun
+	Nature Sounds for Deep Sleep (Just Sounds of Nature, No Music)
+	℗ 2019 Koko Kokorebee
+
+
+FONTS
+--------
+Roboto font - Google Fonts
+
+CODE
+--------
+Singleton.cs - https://answers.unity.com/questions/1408574/destroying-and-recreating-a-singleton.html
