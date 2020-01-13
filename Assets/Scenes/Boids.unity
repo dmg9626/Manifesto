@@ -1076,11 +1076,11 @@ MonoBehaviour:
   - mainText: the things you make linger in your mind
     mainTextFont: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
     mainTextSize: 60
-    subText: 
-    subTextFont: {fileID: 12800000, guid: 9eded669aa00ead4a9259117f3b39958, type: 3}
-    subTextSize: 40
-    subTextDelay: 0
-    duration: 2
+    subText: or on your hard drive
+    subTextFont: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
+    subTextSize: 60
+    subTextDelay: 1
+    duration: 2.5
     setBoidSettings: 1
     boidSettings:
       colorRange:
