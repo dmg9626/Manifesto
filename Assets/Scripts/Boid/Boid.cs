@@ -36,6 +36,13 @@ public class Boid : MonoBehaviour
         [Range(0,1)]
         public float cohesion;
 
+        /// <summary>
+        /// Weight used to control random wandering force
+        /// </summary>
+        [SerializeField]
+        [Range(0,1)]
+        public float noise;
+
         #endregion
 
         #region DetectionSettings
@@ -110,8 +117,11 @@ public class Boid : MonoBehaviour
         Vector3 alignment = BoidDetection.GetAlignment(this, boids, settings).normalized * settings.alignment;
         Vector3 cohesion = BoidDetection.GetCohesion(this, boids, settings).normalized * settings.cohesion;
 
+        // Generate random movement vector
+        Vector3 noise = Random.insideUnitCircle * settings.noise;
+
         // Get averages of all vectors
-        Vector3 sum = (forward + separation + alignment + cohesion).normalized;
+        Vector3 sum = (forward + separation + alignment + cohesion + noise).normalized;
         Debug.DrawRay(transform.position, sum * settings.moveSpeed, Color.green);
 
         // Apply resulting rotation to boid
