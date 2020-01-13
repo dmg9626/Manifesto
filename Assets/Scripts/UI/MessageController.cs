@@ -15,10 +15,16 @@ public class MessageController : MonoBehaviour
     private float messageTransitionDuration = 1;
 
     /// <summary>
-    /// UI Text element to show messages in
+    /// UI Text element to show message.text in
     /// </summary>
     [SerializeField]
-    private Text textElement;
+    private Text mainTextElement;
+
+    /// <summary>
+    /// Smalelr UI Text element to show message.subtext in
+    /// </summary>
+    [SerializeField]
+    private Text subTextElement;
 
     /// <summary>
     /// List of messages to show
@@ -108,12 +114,17 @@ public class MessageController : MonoBehaviour
     /// <param name="message">Message to show</param>
     IEnumerator ShowMessage(Message message)
     {
-        // Update UI with message text
-        textElement.text = message.text;
-        SetAlpha(textElement, 0);
+        // Update UI with message text settings
+        mainTextElement.text = message.mainText;
+        mainTextElement.fontSize = message.mainTextSize;
+        mainTextElement.font = message.mainTextFont;
         
+        subTextElement.text = message.subText;
+        subTextElement.fontSize = message.subTextSize;
+        subTextElement.font = message.subTextFont;
+
         // Fade in
-        StartCoroutine(FadeIn(textElement, messageTransitionDuration));
+        StartCoroutine(FadeIn(mainTextElement, messageTransitionDuration));
         yield return new WaitForSeconds(messageTransitionDuration);
 
         // Update boid settings if specified
@@ -125,7 +136,7 @@ public class MessageController : MonoBehaviour
         yield return new WaitForSeconds(message.duration);
 
         // Fade out
-        StartCoroutine(FadeOut(textElement, messageTransitionDuration));
+        StartCoroutine(FadeOut(mainTextElement, messageTransitionDuration));
         yield return new WaitForSeconds(messageTransitionDuration);
 
         // Increment current message index

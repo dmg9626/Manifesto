@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Message
@@ -9,21 +11,37 @@ public class Message
     [Header("Text Settings")]
 
     /// <summary>
-    /// Text to show
+    /// Text to show in larger main text element
     /// </summary>
-    public string text;
+    public string mainText;
 
     /// <summary>
-    /// Font to use
+    /// Font to use for main text
     /// </summary>
-    [SerializeField]
-    private Font font;
+    public Font mainTextFont;
 
     /// <summary>
-    /// Font size
+    /// Size of main text
+    /// </summary>
+    public int mainTextSize = 60;
+    
+    [Space()]
+    
+    /// <summary>
+    /// Text to show in smaller sub-text element
+    /// </summary>
+    public string subText;
+    
+    /// <summary>
+    /// Font to use for sub-text
+    /// </summary>
+    public Font subTextFont;
+
+    /// <summary>
+    /// Size of sub text
     /// </summary>
     [SerializeField]
-    private int fontSize = 60;
+    public int subTextSize = 40;
 
     [Header("Other Settings")]
 
