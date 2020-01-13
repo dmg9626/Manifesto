@@ -569,7 +569,7 @@ MonoBehaviour:
     rotationSpeed: 360
   boidPrefab: {fileID: 673419690836223465, guid: 3ebddac9a6b674139a95c2eaf083ca61,
     type: 3}
-  startingBoids: 0
+  numberOfBoids: 0
 --- !u!4 &937010090
 Transform:
   m_ObjectHideFlags: 0
@@ -735,7 +735,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: whimsical text goes here
+  m_Text: whimsical text here
 --- !u!222 &1240835902
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -744,3 +744,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240835899}
   m_CullTransparentMesh: 0
+--- !u!1 &1654104498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1654104500}
+  - component: {fileID: 1654104499}
+  m_Layer: 0
+  m_Name: MessageController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1654104499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654104498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df5947dd224fc5e45a393359c4d74879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messages:
+  - text: making things can be fun!
+    font: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
+    fontSize: 60
+    duration: 2
+  - text: but sometimes it feels like
+    font: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
+    fontSize: 60
+    duration: 1
+  - text: the things you make don't amount to much...
+    font: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
+    fontSize: 60
+    duration: 1
+  textElement: {fileID: 1240835901}
+  transitionDuration: 1.5
+  fadeAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1654104500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654104498}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
