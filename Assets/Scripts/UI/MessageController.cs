@@ -114,7 +114,7 @@ public class MessageController : MonoBehaviour
     /// <param name="message">Message to show</param>
     IEnumerator ShowMessage(Message message)
     {
-        // Update UI with message text settings
+        // Update UI with message text/font settings
         mainTextElement.text = message.mainText;
         mainTextElement.fontSize = message.mainTextSize;
         mainTextElement.font = message.mainTextFont;
@@ -123,9 +123,14 @@ public class MessageController : MonoBehaviour
         subTextElement.fontSize = message.subTextSize;
         subTextElement.font = message.subTextFont;
 
-        // Fade in
+        // Fade in main text
         StartCoroutine(FadeIn(mainTextElement, messageTransitionDuration));
-        yield return new WaitForSeconds(messageTransitionDuration);
+
+        // Fade in sub-text (with delay if specified)
+        StartCoroutine(FadeIn(subTextElement, messageTransitionDuration, message.subTextDelay));
+        
+        // Wait for both messages to appear on screen
+        yield return new WaitForSeconds(messageTransitionDuration + message.subTextDelay);
 
         // Update boid settings if specified
         if(message.setBoidSettings) {
@@ -135,9 +140,14 @@ public class MessageController : MonoBehaviour
         // Wait for duration of message duration
         yield return new WaitForSeconds(message.duration);
 
-        // Fade out
+        // Fade out main text
         StartCoroutine(FadeOut(mainTextElement, messageTransitionDuration));
-        yield return new WaitForSeconds(messageTransitionDuration);
+
+        // Fade in sub-text (with delay if specified)
+        StartCoroutine(FadeOut(subTextElement, messageTransitionDuration, message.subTextDelay));
+
+        // Wait for both messages to disappear from screen
+        yield return new WaitForSeconds(messageTransitionDuration + message.subTextDelay);
 
         // Increment current message index
         currentMessageIndex++;
@@ -152,8 +162,13 @@ public class MessageController : MonoBehaviour
     /// </summary>
     /// <param name="element">UI element to fade</param>
     /// <returns></returns>
-    IEnumerator FadeIn(Graphic element, float duration)
+    IEnumerator FadeIn(Graphic element, float duration, float delay=0)
     {
+        SetAlpha(element, 0);
+
+        // Wait delay before fading
+        yield return new WaitForSeconds(delay);
+
         // Fade in
         for (float t = 0; t < 1; t+= Time.deltaTime / messageTransitionDuration) {
             float alpha = Mathf.Lerp(0, 1, t);
@@ -169,8 +184,13 @@ public class MessageController : MonoBehaviour
     /// </summary>
     /// <param name="element">UI element to fade</param>
     /// <returns></returns>
-    IEnumerator FadeOut(Graphic element, float duration)
+    IEnumerator FadeOut(Graphic element, float duration, float delay=0)
     {
+        SetAlpha(element, 1);
+
+        // Wait delay before fading
+        yield return new WaitForSeconds(delay);
+
         // Fade out
         for (float t = 1; t > 0; t-= Time.deltaTime / messageTransitionDuration) {
             float alpha = Mathf.Lerp(0, 1, t);

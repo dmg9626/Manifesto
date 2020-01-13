@@ -43,6 +43,11 @@ public class Message
     [SerializeField]
     public int subTextSize = 40;
 
+    /// <summary>
+    /// Amount of time to wait after main text appears before showing sub-text 
+    /// </summary>
+    public float subTextDelay;
+
     [Header("Other Settings")]
 
     /// <summary>

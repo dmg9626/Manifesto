@@ -785,6 +785,7 @@ MonoBehaviour:
     subText: 
     subTextFont: {fileID: 12800000, guid: 9eded669aa00ead4a9259117f3b39958, type: 3}
     subTextSize: 40
+    subTextDelay: 0
     duration: 2
     setBoidSettings: 1
     boidSettings:
@@ -833,6 +834,7 @@ MonoBehaviour:
     subText: 
     subTextFont: {fileID: 0}
     subTextSize: 40
+    subTextDelay: 0
     duration: 1
     setBoidSettings: 0
     boidSettings:
@@ -881,6 +883,7 @@ MonoBehaviour:
     subText: 
     subTextFont: {fileID: 0}
     subTextSize: 40
+    subTextDelay: 0
     duration: 1
     setBoidSettings: 0
     boidSettings:
@@ -929,6 +932,7 @@ MonoBehaviour:
     subText: 
     subTextFont: {fileID: 12800000, guid: 9eded669aa00ead4a9259117f3b39958, type: 3}
     subTextSize: 40
+    subTextDelay: 0
     duration: 2
     setBoidSettings: 1
     boidSettings:
@@ -977,6 +981,7 @@ MonoBehaviour:
     subText: 
     subTextFont: {fileID: 12800000, guid: 9eded669aa00ead4a9259117f3b39958, type: 3}
     subTextSize: 40
+    subTextDelay: 0
     duration: 4
     setBoidSettings: 1
     boidSettings:
@@ -1025,6 +1030,7 @@ MonoBehaviour:
     subText: 
     subTextFont: {fileID: 12800000, guid: 9eded669aa00ead4a9259117f3b39958, type: 3}
     subTextSize: 40
+    subTextDelay: 0
     duration: 2
     setBoidSettings: 0
     boidSettings:
@@ -1073,6 +1079,7 @@ MonoBehaviour:
     subText: 
     subTextFont: {fileID: 12800000, guid: 9eded669aa00ead4a9259117f3b39958, type: 3}
     subTextSize: 40
+    subTextDelay: 0
     duration: 2
     setBoidSettings: 1
     boidSettings:
@@ -1121,6 +1128,7 @@ MonoBehaviour:
     subText: 
     subTextFont: {fileID: 12800000, guid: 9eded669aa00ead4a9259117f3b39958, type: 3}
     subTextSize: 40
+    subTextDelay: 0
     duration: 2
     setBoidSettings: 0
     boidSettings:
@@ -1169,6 +1177,7 @@ MonoBehaviour:
     subText: 
     subTextFont: {fileID: 12800000, guid: 9eded669aa00ead4a9259117f3b39958, type: 3}
     subTextSize: 40
+    subTextDelay: 0
     duration: 4
     setBoidSettings: 0
     boidSettings:
@@ -1211,12 +1220,13 @@ MonoBehaviour:
       maxAcceleration: 20
       moveSpeed: 10
       rotationSpeed: 360
-  - mainText: Making Things
+  - mainText: The Things You Make
     mainTextFont: {fileID: 12800000, guid: 88e0953f069acae4f9a8f53f25954372, type: 3}
     mainTextSize: 64
     subText: a thing by drew graham
     subTextFont: {fileID: 12800000, guid: 2afb2a4d7b59cdb419d0d73e406c25ee, type: 3}
     subTextSize: 48
+    subTextDelay: 1
     duration: 10
     setBoidSettings: 0
     boidSettings:
