@@ -399,6 +399,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1240835900}
+  - {fileID: 1972701792}
   - {fileID: 1780220398}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -680,7 +681,7 @@ GameObject:
   - component: {fileID: 1240835902}
   - component: {fileID: 1240835901}
   m_Layer: 5
-  m_Name: Text
+  m_Name: MainText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -724,8 +725,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
-    m_FontSize: 60
+    m_Font: {fileID: 12800000, guid: f32736c909afe9c4e831f2b0d5428979, type: 3}
+    m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 6
@@ -736,7 +737,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: the things you make today make the things you make tomorrow
+  m_Text: Making Things
 --- !u!222 &1240835902
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -775,11 +776,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageTransitionDuration: 1.5
-  textElement: {fileID: 1240835901}
+  mainTextElement: {fileID: 1240835901}
+  subTextElement: {fileID: 1972701794}
   messages:
-  - text: making things can be fun!
-    font: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
-    fontSize: 60
+  - mainText: making things can be fun!
+    mainTextFont: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
+    mainTextSize: 60
+    subText: 
+    subTextFont: {fileID: 12800000, guid: 9eded669aa00ead4a9259117f3b39958, type: 3}
+    subTextSize: 40
     duration: 2
     setBoidSettings: 1
     boidSettings:
@@ -822,9 +827,12 @@ MonoBehaviour:
       maxAcceleration: 15
       moveSpeed: 10
       rotationSpeed: 180
-  - text: but sometimes it feels like
-    font: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
-    fontSize: 60
+  - mainText: but sometimes it feels like
+    mainTextFont: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
+    mainTextSize: 60
+    subText: 
+    subTextFont: {fileID: 0}
+    subTextSize: 40
     duration: 1
     setBoidSettings: 0
     boidSettings:
@@ -867,9 +875,12 @@ MonoBehaviour:
       maxAcceleration: 15
       moveSpeed: 15
       rotationSpeed: 360
-  - text: the things you make don't amount to much...
-    font: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
-    fontSize: 60
+  - mainText: the things you make don't amount to much...
+    mainTextFont: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
+    mainTextSize: 60
+    subText: 
+    subTextFont: {fileID: 0}
+    subTextSize: 40
     duration: 1
     setBoidSettings: 0
     boidSettings:
@@ -912,9 +923,12 @@ MonoBehaviour:
       maxAcceleration: 15
       moveSpeed: 15
       rotationSpeed: 360
-  - text: over time your experience builds on itself
-    font: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
-    fontSize: 60
+  - mainText: over time your experience builds on itself
+    mainTextFont: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
+    mainTextSize: 60
+    subText: 
+    subTextFont: {fileID: 12800000, guid: 9eded669aa00ead4a9259117f3b39958, type: 3}
+    subTextSize: 40
     duration: 2
     setBoidSettings: 1
     boidSettings:
@@ -957,9 +971,12 @@ MonoBehaviour:
       maxAcceleration: 20
       moveSpeed: 10
       rotationSpeed: 360
-  - text: failures of the past return as intuition for the future
-    font: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
-    fontSize: 60
+  - mainText: failures of the past return as intuition for the future
+    mainTextFont: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
+    mainTextSize: 60
+    subText: 
+    subTextFont: {fileID: 12800000, guid: 9eded669aa00ead4a9259117f3b39958, type: 3}
+    subTextSize: 40
     duration: 4
     setBoidSettings: 1
     boidSettings:
@@ -1002,9 +1019,12 @@ MonoBehaviour:
       maxAcceleration: 20
       moveSpeed: 10
       rotationSpeed: 360
-  - text: the things you make carve a path for your growth
-    font: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
-    fontSize: 60
+  - mainText: the things you make carve a path for your growth
+    mainTextFont: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
+    mainTextSize: 60
+    subText: 
+    subTextFont: {fileID: 12800000, guid: 9eded669aa00ead4a9259117f3b39958, type: 3}
+    subTextSize: 40
     duration: 2
     setBoidSettings: 0
     boidSettings:
@@ -1047,9 +1067,12 @@ MonoBehaviour:
       maxAcceleration: 20
       moveSpeed: 10
       rotationSpeed: 360
-  - text: the things you make linger in your mind
-    font: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
-    fontSize: 60
+  - mainText: the things you make linger in your mind
+    mainTextFont: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
+    mainTextSize: 60
+    subText: 
+    subTextFont: {fileID: 12800000, guid: 9eded669aa00ead4a9259117f3b39958, type: 3}
+    subTextSize: 40
     duration: 2
     setBoidSettings: 1
     boidSettings:
@@ -1092,9 +1115,12 @@ MonoBehaviour:
       maxAcceleration: 20
       moveSpeed: 10
       rotationSpeed: 360
-  - text: the things you make today...
-    font: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
-    fontSize: 60
+  - mainText: the things you make today...
+    mainTextFont: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
+    mainTextSize: 60
+    subText: 
+    subTextFont: {fileID: 12800000, guid: 9eded669aa00ead4a9259117f3b39958, type: 3}
+    subTextSize: 40
     duration: 2
     setBoidSettings: 0
     boidSettings:
@@ -1137,10 +1163,61 @@ MonoBehaviour:
       maxAcceleration: 20
       moveSpeed: 10
       rotationSpeed: 360
-  - text: '...make the things you make tomorrow'
-    font: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
-    fontSize: 60
-    duration: 5
+  - mainText: '...make the things you make tomorrow'
+    mainTextFont: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
+    mainTextSize: 60
+    subText: 
+    subTextFont: {fileID: 12800000, guid: 9eded669aa00ead4a9259117f3b39958, type: 3}
+    subTextSize: 40
+    duration: 4
+    setBoidSettings: 0
+    boidSettings:
+      colorRange:
+        serializedVersion: 2
+        key0: {r: 0, g: 0.84648275, b: 1, a: 1}
+        key1: {r: 0.4313726, g: 0.98039216, b: 0.87019867, a: 1}
+        key2: {r: 0, g: 0, b: 0, a: 0}
+        key3: {r: 0, g: 0, b: 0, a: 0}
+        key4: {r: 0, g: 0, b: 0, a: 0}
+        key5: {r: 0, g: 0, b: 0, a: 0}
+        key6: {r: 0, g: 0, b: 0, a: 0}
+        key7: {r: 0, g: 0, b: 0, a: 0}
+        ctime0: 0
+        ctime1: 65535
+        ctime2: 0
+        ctime3: 0
+        ctime4: 0
+        ctime5: 0
+        ctime6: 0
+        ctime7: 0
+        atime0: 0
+        atime1: 65535
+        atime2: 0
+        atime3: 0
+        atime4: 0
+        atime5: 0
+        atime6: 0
+        atime7: 0
+        m_Mode: 0
+        m_NumColorKeys: 2
+        m_NumAlphaKeys: 2
+      separation: 0.825
+      alignment: 0.486
+      cohesion: 0.575
+      noise: 0.065
+      raycastCount: 8
+      degrees: 270
+      range: 1
+      maxAcceleration: 20
+      moveSpeed: 10
+      rotationSpeed: 360
+  - mainText: Making Things
+    mainTextFont: {fileID: 12800000, guid: 88e0953f069acae4f9a8f53f25954372, type: 3}
+    mainTextSize: 64
+    subText: a thing by drew graham
+    subTextFont: {fileID: 12800000, guid: 2afb2a4d7b59cdb419d0d73e406c25ee, type: 3}
+    subTextSize: 48
+    duration: 10
     setBoidSettings: 0
     boidSettings:
       colorRange:
@@ -1230,7 +1307,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 592467020}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1273,3 +1350,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780220397}
   m_CullTransparentMesh: 0
+--- !u!1 &1972701791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1972701792}
+  - component: {fileID: 1972701793}
+  - component: {fileID: 1972701794}
+  m_Layer: 5
+  m_Name: SubText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1972701792
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972701791}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 592467020}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -51}
+  m_SizeDelta: {x: 1200, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1972701793
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972701791}
+  m_CullTransparentMesh: 0
+--- !u!114 &1972701794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972701791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: cf871cc70b27d7a41a346328e26bd77e, type: 3}
+    m_FontSize: 48
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 155
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: a thing by drew graham
