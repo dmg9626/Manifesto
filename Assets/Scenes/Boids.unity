@@ -774,6 +774,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df5947dd224fc5e45a393359c4d74879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  messageTransitionDuration: 1.5
+  textElement: {fileID: 1240835901}
   messages:
   - text: making things can be fun!
     font: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
@@ -787,10 +789,10 @@ MonoBehaviour:
     font: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
     fontSize: 60
     duration: 1
-  textElement: {fileID: 1240835901}
-  leftClickIndicator: {fileID: 0}
-  transitionDuration: 1.5
-  currentMessageIndex: 0
+  leftClickIndicator: {fileID: 1780220399}
+  leftClickDelay: 2
+  leftClickFadeDuration: 0.5
+  leftClickShowDuration: 3
 --- !u!4 &1654104500
 Transform:
   m_ObjectHideFlags: 0
@@ -817,7 +819,7 @@ GameObject:
   - component: {fileID: 1780220400}
   - component: {fileID: 1780220399}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Click Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
