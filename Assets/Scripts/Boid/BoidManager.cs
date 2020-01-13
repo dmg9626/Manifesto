@@ -14,27 +14,36 @@ public class BoidManager : Singleton<BoidManager>
     private Boid boidPrefab;
 
     /// <summary>
-    /// Number of boids in scene
+    /// Starting boids in scene
     /// </summary>
     [SerializeField]
+    private int startingBoids;
+
+    /// <summary>
+    /// Current number of boids in scene
+    /// </summary>
     private int numberOfBoids;
+
+    /// <summary>
+    /// Maximum number of boids the scene can handle
+    /// </summary>
+    private int maxBoids = 300;
 
     float distanceFromCamera = 10f;
 
     void Start()
     {
         // Instantiate boids in scene
-        for(int i = 0; i < numberOfBoids; i++) {
+        for(int i = 0; i < startingBoids; i++) {
             // Spawn bird at random position
             Boid boid = SpawnBoid();
-            boid.name = "Boid " + (i+1);
         }
     }
 
     void Update()
     {
         // Click to spawn boid at mouse position
-        if(Input.GetMouseButtonDown(0)) {
+        if(numberOfBoids < maxBoids && Input.GetMouseButtonDown(0)) {
             Vector3 screenPos = Input.mousePosition;
             Vector3 viewportPos = Camera.main.ScreenToViewportPoint(screenPos);
             viewportPos.z = distanceFromCamera;
@@ -51,12 +60,16 @@ public class BoidManager : Singleton<BoidManager>
     /// <returns></returns>
     Boid SpawnBoidAt(Vector3 viewportPosition) 
     {
+        // Increment number of boids
+        numberOfBoids++;
+        
         Boid boid = Instantiate(boidPrefab);
+        boid.name = "Boid " + numberOfBoids;
 
         // Set given position
         Vector3 worldPos = Camera.main.ViewportToWorldPoint(viewportPosition);
         boid.transform.position = worldPos;
-        
+
         return boid;
     }
     
