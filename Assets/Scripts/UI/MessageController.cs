@@ -11,12 +11,20 @@ public class MessageController : MonoBehaviour
     /// </summary>
     [SerializeField]
     private List<Message> messages;
+
+    [Header("UI Elements")]
     
     /// <summary>
     /// UI Text element to show messages in
     /// </summary>
     [SerializeField]
     private Text textElement;
+
+    /// <summary>
+    /// Icon that tells the player to click
+    /// </summary>
+    [SerializeField]
+    private Image leftClickIndicator;
 
     [Header("Other Settings")] 
 
@@ -65,36 +73,60 @@ public class MessageController : MonoBehaviour
     {
         // Update UI with message text
         textElement.text = message.text;
+        SetAlpha(textElement, 0);
         
         // Fade in
-        SetAlpha(0);
-        for (float t = 0; t < 1; t+= Time.deltaTime / transitionDuration) {
-            float alpha = Mathf.Lerp(0, 1, t);
-            SetAlpha(alpha);
-
-            yield return null;
-        }
+        StartCoroutine(FadeIn(textElement));
+        yield return new WaitForSeconds(transitionDuration);
 
         // Wait for duration of message duration
         yield return new WaitForSeconds(message.duration);
 
         // Fade out
-        for (float t = 1; t > 0; t-= Time.deltaTime / transitionDuration) {
-            float alpha = Mathf.Lerp(0, 1, t);
-            SetAlpha(alpha);
-
-            yield return null;
-        }
+        StartCoroutine(FadeOut(textElement));
+        yield return new WaitForSeconds(transitionDuration);
 
         // Set coroutine instance to null before returning
         showmessageCoroutine = null;
         yield return null;
     }
 
-    void SetAlpha(float alpha)
+    /// <summary>
+    /// Smoothly fades a graphic from invisible to opaque
+    /// </summary>
+    /// <param name="element">UI element to fade</param>
+    /// <returns></returns>
+    IEnumerator FadeIn(Graphic element)
     {
-        Color color = textElement.color;
+        // Fade in
+        for (float t = 0; t < 1; t+= Time.deltaTime / transitionDuration) {
+            float alpha = Mathf.Lerp(0, 1, t);
+            SetAlpha(element, alpha);
+
+            yield return null;
+        }
+    }
+
+    /// <summary>
+    /// Smoothly fades a graphic from opaque to invisible
+    /// </summary>
+    /// <param name="element">UI element to fade</param>
+    /// <returns></returns>
+    IEnumerator FadeOut(Graphic element)
+    {
+        // Fade out
+        for (float t = 1; t > 0; t-= Time.deltaTime / transitionDuration) {
+            float alpha = Mathf.Lerp(0, 1, t);
+            SetAlpha(element, alpha);
+
+            yield return null;
+        }
+    }
+
+    void SetAlpha(Graphic element, float alpha)
+    {
+        Color color = element.color;
         color.a = alpha;
-        textElement.color = color;
+        element.color = color;
     }
 }
