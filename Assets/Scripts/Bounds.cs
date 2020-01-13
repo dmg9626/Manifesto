@@ -28,8 +28,7 @@ public class Bounds : MonoBehaviour
     }
 
     /// <summary>
-    /// Sent when another object leaves a trigger collider attached to
-    /// this object (2D physics only).
+    /// Sent when another object leaves a trigger collider attached to this object
     /// </summary>
     /// <param name="other">The other Collider2D involved in this collision.</param>
     void OnTriggerExit(Collider other)
@@ -46,8 +45,14 @@ public class Bounds : MonoBehaviour
         other.transform.position = otherWorldPos;
     }
 
+    /// <summary>
+    /// Given an off-screen position (in viewport-space), returns a position wrapped around to the other side of the screen
+    /// </summary>
+    /// <param name="otherViewportPos">Position in viewport space</param>
+    /// <returns></returns>
     Vector3 WarpToBounds(Vector3 otherViewportPos)
     {
+        // Warp between top/bottom of screen
         if(otherViewportPos.y > 1) {
             otherViewportPos.y = 0;
         }
@@ -55,6 +60,7 @@ public class Bounds : MonoBehaviour
             otherViewportPos.y = 1;
         }
 
+        // Warp between left/right of screen
         if(otherViewportPos.x > 1) {
             otherViewportPos.x = 0;
         }
