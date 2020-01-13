@@ -30,6 +30,15 @@ public class Message
     /// <summary>
     /// Duration to show text
     /// </summary>
-    [SerializeField]
     public float duration = 3;
+
+    /// <summary>
+    /// If true, specified settings will be applied to boids
+    /// </summary>
+    public bool setBoidSettings = false;
+
+    /// <summary>
+    /// Settings to apply to boids (only used if setBoidSettings is true)
+    /// </summary>
+    public Boid.Settings boidSettings;
 }

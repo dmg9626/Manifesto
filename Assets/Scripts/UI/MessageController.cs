@@ -116,6 +116,11 @@ public class MessageController : MonoBehaviour
         StartCoroutine(FadeIn(textElement, messageTransitionDuration));
         yield return new WaitForSeconds(messageTransitionDuration);
 
+        // Update boid settings if specified
+        if(message.setBoidSettings) {
+            BoidManager.Instance.settings = message.boidSettings;
+        }
+
         // Wait for duration of message duration
         yield return new WaitForSeconds(message.duration);
 
