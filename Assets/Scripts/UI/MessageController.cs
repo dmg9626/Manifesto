@@ -25,21 +25,30 @@ public class MessageController : MonoBehaviour
     /// </summary>
     [SerializeField]
     private float transitionDuration = 1;
-    
+
     [SerializeField]
-    private AnimationCurve fadeAnimationCurve;
-
-
     private int currentMessageIndex = 0;
 
     void Start()
     {
+        Message message = messages[currentMessageIndex];
         showmessageCoroutine = StartCoroutine(ShowMessage(messages[0]));
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (currentMessageIndex < messages.Count)
+        {
+            // Show next message when coroutine ends
+            if (showmessageCoroutine == null)
+            {
+                currentMessageIndex++;
+                Message message = messages[currentMessageIndex];
+
+                showmessageCoroutine = StartCoroutine(ShowMessage(message));
+            }
+        }
         
     }
 
@@ -57,37 +66,25 @@ public class MessageController : MonoBehaviour
         // Update UI with message text
         textElement.text = message.text;
         
-        // Set invisible before fading in
-        SetAlpha(0);
-
-        Debug.Log("Fading in...");
         // Fade in
+        SetAlpha(0);
         for (float t = 0; t < 1; t+= Time.deltaTime / transitionDuration) {
-            // Update alpha with lerp function each frame
             float alpha = Mathf.Lerp(0, 1, t);
-            Debug.Log("Alpha -> " + alpha);
             SetAlpha(alpha);
 
             yield return null;
         }
-        SetAlpha(1);
 
-        Debug.Log("Waiting...");
         // Wait for duration of message duration
         yield return new WaitForSeconds(message.duration);
 
-        Debug.Log("Fading out...");
-
         // Fade out
         for (float t = 1; t > 0; t-= Time.deltaTime / transitionDuration) {
-            // Update alpha with lerp function each frame
             float alpha = Mathf.Lerp(0, 1, t);
-            Debug.Log("Alpha -> " + alpha);
             SetAlpha(alpha);
 
             yield return null;
         }
-        SetAlpha(0);
 
         // Set coroutine instance to null before returning
         showmessageCoroutine = null;
