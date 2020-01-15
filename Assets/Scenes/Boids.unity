@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -704,7 +704,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 71.76}
-  m_SizeDelta: {x: 1200, y: 30}
+  m_SizeDelta: {x: 1500, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1240835901
 MonoBehaviour:
@@ -1076,11 +1076,11 @@ MonoBehaviour:
   - mainText: the things you make linger in your mind
     mainTextFont: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
     mainTextSize: 60
-    subText: or on your hard drive
+    subText: (or on your hard drive)
     subTextFont: {fileID: 12800000, guid: 3843d0cb0f20fd840a4f218ae89439b1, type: 3}
     subTextSize: 60
-    subTextDelay: 1
-    duration: 2.5
+    subTextDelay: 2
+    duration: 1
     setBoidSettings: 1
     boidSettings:
       colorRange:
@@ -1129,7 +1129,7 @@ MonoBehaviour:
     subTextFont: {fileID: 12800000, guid: 9eded669aa00ead4a9259117f3b39958, type: 3}
     subTextSize: 40
     subTextDelay: 0
-    duration: 2
+    duration: 1.5
     setBoidSettings: 0
     boidSettings:
       colorRange:
@@ -1178,7 +1178,7 @@ MonoBehaviour:
     subTextFont: {fileID: 12800000, guid: 9eded669aa00ead4a9259117f3b39958, type: 3}
     subTextSize: 40
     subTextDelay: 0
-    duration: 4
+    duration: 1.5
     setBoidSettings: 0
     boidSettings:
       colorRange:
